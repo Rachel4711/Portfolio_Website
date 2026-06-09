@@ -17,13 +17,13 @@ class CreateAchievementsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
 
-            $table->month('month');
+            $table->string('month', 20);
             $table->year('year');
 
             $table->string('title');
             $table->string('issuer');
             $table->json('description');
-            
+
             $table->timestamps();
         });
     }
